@@ -15,7 +15,7 @@ public class Assignment2Parser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		A=1, B=2, P=3, U=4, C=5, S=6, LP=7, RP=8;
+		A=1, B=2, E=3, P=4, U=5, C=6, S=7, LP=8, RP=9;
 	public static final int
 		RULE_s = 0, RULE_r = 1;
 	private static String[] makeRuleNames() {
@@ -27,13 +27,13 @@ public class Assignment2Parser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'a'", "'b'", "'p'", "'U'", "'.'", "'*'", "'('", "')'"
+			null, "'a'", "'b'", "'e'", "'p'", "'U'", "'.'", "'*'", "'('", "')'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "A", "B", "P", "U", "C", "S", "LP", "RP"
+			null, "A", "B", "E", "P", "U", "C", "S", "LP", "RP"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -140,6 +140,7 @@ public class Assignment2Parser extends Parser {
 		public RContext r1;
 		public RContext r2;
 		public RContext r;
+		public TerminalNode E() { return getToken(Assignment2Parser.E, 0); }
 		public TerminalNode P() { return getToken(Assignment2Parser.P, 0); }
 		public TerminalNode A() { return getToken(Assignment2Parser.A, 0); }
 		public TerminalNode B() { return getToken(Assignment2Parser.B, 0); }
@@ -164,19 +165,21 @@ public class Assignment2Parser extends Parser {
 		RContext _localctx = new RContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_r);
 		try {
-			setState(34);
+			setState(35);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
+				setState(7);
+				match(E);
 				 ((RContext)_localctx).a =  0; ((RContext)_localctx).b =  0; ((RContext)_localctx).check =  1; 
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(8);
+				setState(9);
 				match(P);
 				 ((RContext)_localctx).a =  0; ((RContext)_localctx).b =  0; ((RContext)_localctx).check =  1; 
 				}
@@ -184,7 +187,7 @@ public class Assignment2Parser extends Parser {
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(10);
+				setState(11);
 				match(A);
 				 ((RContext)_localctx).a =  1; ((RContext)_localctx).b =  0; ((RContext)_localctx).check =  1; 
 				}
@@ -192,7 +195,7 @@ public class Assignment2Parser extends Parser {
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(12);
+				setState(13);
 				match(B);
 				 ((RContext)_localctx).a =  0; ((RContext)_localctx).b =  1; ((RContext)_localctx).check =  1; 
 				}
@@ -200,15 +203,15 @@ public class Assignment2Parser extends Parser {
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(14);
-				match(LP);
 				setState(15);
-				((RContext)_localctx).r1 = r();
+				match(LP);
 				setState(16);
-				match(U);
+				((RContext)_localctx).r1 = r();
 				setState(17);
-				((RContext)_localctx).r2 = r();
+				match(U);
 				setState(18);
+				((RContext)_localctx).r2 = r();
+				setState(19);
 				match(RP);
 				 ((RContext)_localctx).a =  ((RContext)_localctx).r1.a + ((RContext)_localctx).r2.a; ((RContext)_localctx).b =  ((RContext)_localctx).r1.b + ((RContext)_localctx).r2.b; ((RContext)_localctx).check =  ((RContext)_localctx).r1.check * ((RContext)_localctx).r2.check * equals(((RContext)_localctx).r1.a, ((RContext)_localctx).r2.b); 
 				}
@@ -216,15 +219,15 @@ public class Assignment2Parser extends Parser {
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(21);
-				match(LP);
 				setState(22);
-				((RContext)_localctx).r1 = r();
+				match(LP);
 				setState(23);
-				match(C);
+				((RContext)_localctx).r1 = r();
 				setState(24);
-				((RContext)_localctx).r2 = r();
+				match(C);
 				setState(25);
+				((RContext)_localctx).r2 = r();
+				setState(26);
 				match(RP);
 				 ((RContext)_localctx).a =  ((RContext)_localctx).r1.a + ((RContext)_localctx).r2.a; ((RContext)_localctx).b =  ((RContext)_localctx).r1.b + ((RContext)_localctx).r2.b; ((RContext)_localctx).check =  ((RContext)_localctx).r1.check * ((RContext)_localctx).r2.check; 
 				}
@@ -232,13 +235,13 @@ public class Assignment2Parser extends Parser {
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(28);
-				match(LP);
 				setState(29);
-				((RContext)_localctx).r = r();
+				match(LP);
 				setState(30);
-				match(S);
+				((RContext)_localctx).r = r();
 				setState(31);
+				match(S);
+				setState(32);
 				match(RP);
 				 ((RContext)_localctx).a =  ((RContext)_localctx).r.a; ((RContext)_localctx).b =  ((RContext)_localctx).r.b; ((RContext)_localctx).check =  ((RContext)_localctx).r.check; 
 				}
@@ -257,17 +260,17 @@ public class Assignment2Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\n\'\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\13(\4\2\t\2\4\3\t"+
 		"\3\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3%\n\3\3\3\2\2"+
-		"\4\2\4\2\2\2*\2\6\3\2\2\2\4$\3\2\2\2\6\7\5\4\3\2\7\b\b\2\1\2\b\3\3\2\2"+
-		"\2\t%\b\3\1\2\n\13\7\5\2\2\13%\b\3\1\2\f\r\7\3\2\2\r%\b\3\1\2\16\17\7"+
-		"\4\2\2\17%\b\3\1\2\20\21\7\t\2\2\21\22\5\4\3\2\22\23\7\6\2\2\23\24\5\4"+
-		"\3\2\24\25\7\n\2\2\25\26\b\3\1\2\26%\3\2\2\2\27\30\7\t\2\2\30\31\5\4\3"+
-		"\2\31\32\7\7\2\2\32\33\5\4\3\2\33\34\7\n\2\2\34\35\b\3\1\2\35%\3\2\2\2"+
-		"\36\37\7\t\2\2\37 \5\4\3\2 !\7\b\2\2!\"\7\n\2\2\"#\b\3\1\2#%\3\2\2\2$"+
-		"\t\3\2\2\2$\n\3\2\2\2$\f\3\2\2\2$\16\3\2\2\2$\20\3\2\2\2$\27\3\2\2\2$"+
-		"\36\3\2\2\2%\5\3\2\2\2\3$";
+		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3&\n\3\3\3"+
+		"\2\2\4\2\4\2\2\2+\2\6\3\2\2\2\4%\3\2\2\2\6\7\5\4\3\2\7\b\b\2\1\2\b\3\3"+
+		"\2\2\2\t\n\7\5\2\2\n&\b\3\1\2\13\f\7\6\2\2\f&\b\3\1\2\r\16\7\3\2\2\16"+
+		"&\b\3\1\2\17\20\7\4\2\2\20&\b\3\1\2\21\22\7\n\2\2\22\23\5\4\3\2\23\24"+
+		"\7\7\2\2\24\25\5\4\3\2\25\26\7\13\2\2\26\27\b\3\1\2\27&\3\2\2\2\30\31"+
+		"\7\n\2\2\31\32\5\4\3\2\32\33\7\b\2\2\33\34\5\4\3\2\34\35\7\13\2\2\35\36"+
+		"\b\3\1\2\36&\3\2\2\2\37 \7\n\2\2 !\5\4\3\2!\"\7\t\2\2\"#\7\13\2\2#$\b"+
+		"\3\1\2$&\3\2\2\2%\t\3\2\2\2%\13\3\2\2\2%\r\3\2\2\2%\17\3\2\2\2%\21\3\2"+
+		"\2\2%\30\3\2\2\2%\37\3\2\2\2&\5\3\2\2\2\3%";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

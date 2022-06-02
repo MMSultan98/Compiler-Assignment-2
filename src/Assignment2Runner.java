@@ -22,17 +22,17 @@ public class Assignment2Runner {
         System.out.println(sCheckValue("(aUa)"));
         System.out.println(sCheckValue("((aUb)Ua)"));
         System.out.println(sCheckValue("((a.a)Ub)"));
-        System.out.println(sCheckValue("((a.a)U(.))"));
-        System.out.println(sCheckValue("((a.a)U(b.))"));
+        System.out.println(sCheckValue("((a.a)U(e.e))"));
+        System.out.println(sCheckValue("((a.a)U(b.e))"));
         System.out.println(sCheckValue("((bUb)U(aUb))"));
-        System.out.println(sCheckValue("(((b.b)U)U(aUb))"));
-        System.out.println(sCheckValue("(((b.b)U)U(((b*).b)Ua))"));
+        System.out.println(sCheckValue("(((b.b)Ue)U(aUb))"));
+        System.out.println(sCheckValue("(((b.b)Ue)U(((b*).b)Ua))"));
 
         System.out.println();
 
         // check = 1
         System.out.println("Check = 1:");
-        System.out.println(sCheckValue(""));
+        System.out.println(sCheckValue("e"));
         System.out.println(sCheckValue("a"));
         System.out.println(sCheckValue("b"));
         System.out.println(sCheckValue("(aUb)"));
@@ -42,7 +42,7 @@ public class Assignment2Runner {
         System.out.println(sCheckValue("((aUb)U(aUb))"));
         System.out.println(sCheckValue("((a.a)U(b.b))"));
         System.out.println(sCheckValue("((bUa)U(aUb))"));
-        System.out.println(sCheckValue("(((b.b)U)U(Ua))"));
+        System.out.println(sCheckValue("(((b.b)Ue)U(eUa))"));
         
     }
 

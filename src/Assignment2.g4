@@ -21,7 +21,7 @@ s returns [int check]
 ;
 
 r returns [int a, int b, int check]
-	: { $a = 0; $b = 0; $check = 1; }
+	: E { $a = 0; $b = 0; $check = 1; }
 	| P { $a = 0; $b = 0; $check = 1; }
 	| A { $a = 1; $b = 0; $check = 1; }
     | B { $a = 0; $b = 1; $check = 1; }
@@ -35,6 +35,7 @@ r returns [int a, int b, int check]
 
 A : 'a' ;
 B : 'b' ;
+E : 'e' ;
 P : 'p' ;
 U : 'U' ;
 C : '.' ;
